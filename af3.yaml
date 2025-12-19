@@ -1,0 +1,12 @@
+name: af3
+channels:
+- bioconda
+- conda-forge
+- defaults
+dependencies:
+- python=3.11.6
+- snakemake-minimal
+- snakemake-executor-plugin-cluster-generic
+- pandas
+- wget
+- prody
