@@ -1,6 +1,8 @@
 #!/bin/bash -l
 # Run batch inference on a set of inputs:
 #     ./batch-infer METHOD RESULTS_PREFIX [--dry-run]
+# METHOD in workflow/targets/
+# af3_msa_only.smk
 #
 LOGS_DATE=$2/.snakemake-eu/logs/`date +"%y-%m-%d"`
 RESULTS_PREFIX_ENC=`echo -n $2 | sed -e 's#/#-#g'`
