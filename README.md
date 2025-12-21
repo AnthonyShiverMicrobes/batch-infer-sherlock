@@ -1,4 +1,4 @@
-# Fork of <i>batch-infer</i> Batch inference of protein structure
+# Fork of <i>batch-infer</i>: Batch inference of protein structure
 
 A fork of batch-infer, written by jurgjn, modified for deployment on Stanford's sherlock cluster for CPU-based MSA generation. Original readme quoted below.
 
