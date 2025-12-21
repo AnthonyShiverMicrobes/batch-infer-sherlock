@@ -4,8 +4,8 @@ ids_msas_, = glob_wildcards('alphafold3_msas/{id}_data.json.gz')
 ids = set(ids_jsons_) | set(ids_msas_)
 
 include: '../rules/common.smk'
-include: '../rules/alphafold3_msas.smk'
-include: '../rules/alphafold3_predictions.smk'
+include: '../rules/msa.smk'
+include: '../rules/pred.smk'
 
 rule alphafold3_onegpu:
     # AlphaFold3 run with MSAs as individual jobs, all predictions as a single GPU job

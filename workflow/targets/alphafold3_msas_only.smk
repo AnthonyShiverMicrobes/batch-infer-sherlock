@@ -1,9 +1,9 @@
 
-ids, = glob_wildcards('alphafold3_jsons/{id}.json')
+ids, = glob_wildcards('orfs/{id}.json')
 
 include: '../rules/common.smk'
-include: '../rules/alphafold3_msas.smk'
+include: '../rules/msa.smk'
 
 rule alphafold3_msas_only:
     input:
-        expand('alphafold3_msas/{id}_data.json.gz', id=ids),
+        expand('msas/{id}_data.json.gz', id=ids),

@@ -1,6 +1,6 @@
 
 include: '../rules/common.smk'
-include: '../rules/alphafold3_msas.smk'
+include: '../rules/msa.smk'
 
 tsv_ = 'alphafold3_predictions_multigpu.tsv'
 if not os.path.isfile(tsv_):

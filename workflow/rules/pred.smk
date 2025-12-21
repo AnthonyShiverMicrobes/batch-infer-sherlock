@@ -1,5 +1,5 @@
 
-rule alphafold3_predictions:
+rule pred:
     # Run AF3 structure prediction on all .json-s
     input:
         json = expand('alphafold3_msas/{id}_data.json.gz', id=ids),
