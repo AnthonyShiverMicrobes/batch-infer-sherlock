@@ -111,7 +111,6 @@ def parse_arguments():
     )
     parser.add_argument(
         '--output-dir',
-        default='alphafold3_jsons',
         help='Output directory for JSON files (default: alphafold3_jsons)'
     )
     parser.add_argument(
