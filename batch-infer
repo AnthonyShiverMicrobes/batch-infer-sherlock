@@ -17,6 +17,7 @@ cat - <<EOF
 #SBATCH --tmp=16834
 #SBATCH --time=1:00:00
 #SBATCH --output=$LOGS_DATE/$JOBNAME-%j.txt
+#SBATCH --error=$LOGS_DATE/$JOBNAME-%j.err
 
 #load the conda environment
 eval "\$(conda shell.bash hook)"
