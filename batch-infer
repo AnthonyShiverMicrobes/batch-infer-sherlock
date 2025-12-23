@@ -15,7 +15,7 @@ cat - <<EOF
 #SBATCH --ntasks=1
 #SBATCH --mem-per-cpu=16GB
 #SBATCH --tmp=16834
-#SBATCH --time=48:00:00
+#SBATCH --time=1:00:00
 #SBATCH --output=$LOGS_DATE/$JOBNAME-%j.txt
 
 #load the conda environment
