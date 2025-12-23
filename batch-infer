@@ -27,6 +27,4 @@ snakemake $1 --snakefile workflow/targets/$1.smk \\
     --configfile workflow/config/defaults.yaml $2/config.yaml \\
     --profile=$PROFILE --workflow-profile=workflow/profiles/default \\
     --directory $2 --rerun-triggers input $3
-
-myjobs -j \$SLURM_JOB_ID
 EOF

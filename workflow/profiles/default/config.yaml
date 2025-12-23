@@ -87,9 +87,11 @@ use-conda: True
 restart-times: 0
 #jobs: 100 # Reduced from default (500) to keep CPU efficiency at ~90% when running alphafold3_msas at scale
 #jobs: 200
-jobs: 300
+jobs: 100
 #jobs: 400
 #jobs: 500
+max-jobs-per-second: 5
+max-status-checks-per-second: 1
 # Set up `fs` storage plugin to have rsync to/from local scratch as the default I/O pattern
 # https://scicomp.ethz.ch/wiki/Using_local_scratch
 # https://snakemake.github.io/snakemake-plugin-catalog/plugins/storage/fs.html
