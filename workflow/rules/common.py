@@ -157,7 +157,7 @@ def alphafold3_write_monomer(af3_id, seq):
   "version": 2
 }
 """
-    path = f'alphafold3_jsons/{af3_id}.json'
+    path = f'{af3_id}.json'
     if not os.path.isfile(path):
         with open(path, 'w') as fh:
             fh.write(json_ % (af3_id, seq))

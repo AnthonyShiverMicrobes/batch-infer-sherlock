@@ -32,7 +32,7 @@ def extract_proteins_from_genbank(genbank_path, output_dir='orf'):
     printsrc(f"Reading GenBank file: {genbank_path}")
 
     for genome_record in SeqIO.parse(genbank_path, "genbank"):
-        genome_id = genome_record.id
+        genome_id = genome_record.accessions[0] if genome_record.accessions else genome_record.id
         printsrc(f"Processing genome: {genome_id} ({genome_record.description})")
 
         # Extract all CDS features with translations
