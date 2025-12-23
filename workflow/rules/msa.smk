@@ -22,15 +22,11 @@ rule msa:
         db_dir = '--db_dir=/root/public_databases',
         #db_dir_fallback = '--db_dir=/root/public_databases_fallback',
         xtra_args = '--norun_inference',
-    envmodules:
-        'stack/2024-06', 'python/3.11.6',
-    # https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#defining-retries-for-fallible-rules
-    # Re-attempt (failed) MSAs with increasing runtimes (4h, 1d, 3d)
     retries: 3
     shell: """
         SMKDIR=`pwd`
         rsync -auq $SMKDIR/ $TMPDIR --include='orfs' --include='{input.json}' --exclude='*'
-        mkdir -p $TMPDIR/msas
+        mkdir -p $TMPDIR/msa
         cd $TMPDIR
         singularity exec {params.af_input} {params.af_output} {params.models} {params.databases} {params.docker} \
             sh -c 'python /app/alphafold/run_alphafold.py \
@@ -40,6 +36,6 @@ rule msa:
                 {params.db_dir} \
                 {params.xtra_args}'
         cd -
-        gzip $TMPDIR/msas/{wildcards.id}/{wildcards.id}_data.json
-        cp $TMPDIR/msas/{wildcards.id}/{wildcards.id}_data.json.gz $SMKDIR/msas/{wildcards.id}_data.json.gz
+        gzip $TMPDIR/msa/{wildcards.id}/{wildcards.id}_data.json
+        cp $TMPDIR/msa/{wildcards.id}/{wildcards.id}_data.json.gz $SMKDIR/msa/{wildcards.id}_data.json.gz
     """
